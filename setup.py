@@ -41,7 +41,7 @@ ext = Extension(
     sources=globex("src/*.cc", exclude=["*_test.cc", "*_bench.cc"])
     + ["third_party/google/tcmalloc/sampler.cc"],
     depends=glob.glob("src/*.h"),
-    include_dirs=[os.getcwd(), "src"],
+    include_dirs=["src", "."],
     define_macros=define_macros,
     extra_compile_args=["-std=c++11"],
     extra_link_args=["-std=c++11", "-static-libstdc++"],
